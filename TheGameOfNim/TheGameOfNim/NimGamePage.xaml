@@ -1,0 +1,95 @@
+﻿<Window x:Class="TheGameOfNim.NimGamePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheGameOfNim"
+        mc:Ignorable="d"
+        Title="NimGamePage" Height="325" Width="300">
+    <StackPanel>
+        <StackPanel
+            x:Name="HowToPlay"
+            Visibility="Collapsed">
+            <Label>How to play the game of Nim:</Label>
+            <Label></Label>
+            <Label>Two players take turns pulling stones</Label>
+            <Label>off the provided heaps.</Label>
+            <Label></Label>
+            <Label>A player may only take stones off a heap on their turn.</Label>
+            <Label></Label>
+            <Label>A player may only take stones off one heap per turn.</Label>
+            <Label></Label>
+            <Label>A player may take as many stones off that heap</Label>
+            <Label>as they wish, upto the number of stones in that heap</Label>
+            <Label></Label>
+            <Label>The last player to take a stone, loses.</Label>
+            <Button
+                Click="ReturnToGameSetup"
+                >Got it!</Button>
+        </StackPanel>
+        <Grid
+            x:Name="GameGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="playerTurn"
+                Grid.ColumnSpan="2"/>
+            <StackPanel
+                x:Name="heapsPanel"
+                Grid.Row="1"
+                Grid.RowSpan="2"/>
+            <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="1">
+                <Label
+                    HorizontalContentAlignment="Center">
+                    Select Heap
+                </Label>
+                <TextBox
+                    x:Name="heapInput"/>
+            </StackPanel>
+            <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="1">
+                <Label
+                    HorizontalContentAlignment="Center">
+                    Number of stones moved
+                </Label>
+                <TextBox
+                    x:Name="quantityInput"/>
+            </StackPanel>
+            <Button
+                x:Name="submitButton"
+                Content="Submit Move"
+                Margin="10,10,10,10"
+                Click="SubmitMove"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"/>
+        </Grid>
+        <StackPanel
+            x:Name="Setup"
+            Visibility="Collapsed">
+            <local:NimSetupView
+                x:Name="GameBuilder"/>
+            <Button Click="GoToRules">
+                See Rules
+            </Button>
+        </StackPanel>
+        <StackPanel
+            x:Name="WinDisplay">
+            <Label
+                x:Name="WinLabel"/>
+            <Button
+                Content="New Game"
+                Click="NewGame"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
