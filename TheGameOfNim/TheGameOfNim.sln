@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGameOfNim", "TheGameOfNim\TheGameOfNim.csproj", "{73105F80-9662-41A8-8A31-9819EC5B5487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NimUnitTests", "NimUnitTests\NimUnitTests.csproj", "{CF6808CB-9D96-48AF-9DD8-A4ED2CF5B579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{73105F80-9662-41A8-8A31-9819EC5B5487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73105F80-9662-41A8-8A31-9819EC5B5487}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73105F80-9662-41A8-8A31-9819EC5B5487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6808CB-9D96-48AF-9DD8-A4ED2CF5B579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6808CB-9D96-48AF-9DD8-A4ED2CF5B579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6808CB-9D96-48AF-9DD8-A4ED2CF5B579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6808CB-9D96-48AF-9DD8-A4ED2CF5B579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5759E10-5EBA-4C06-B740-354DC1C15879}
 	EndGlobalSection
 EndGlobal
