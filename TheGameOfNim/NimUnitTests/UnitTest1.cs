@@ -11,6 +11,9 @@ namespace NimUnitTests {
     [TestClass]
     public class UnitTest1 {
 
+        /// <summary>
+        /// Testing initializing the game in single player mode
+        /// </summary>
         [TestMethod]
         public void SinglePlayerCtorTest() {
             foreach (Difficulty d in Enum.GetValues(typeof(Difficulty))) {
@@ -20,6 +23,9 @@ namespace NimUnitTests {
             }
         }
 
+        /// <summary>
+        /// Ensure that the computer player's name is "CPU"
+        /// </summary>
         [TestMethod]
         public void ComputerPlayerNameTest() {
             foreach (Difficulty d in Enum.GetValues(typeof(Difficulty))) {
@@ -28,6 +34,9 @@ namespace NimUnitTests {
             }
         }
 
+        /// <summary>
+        /// Testing initializing the game in 2 player mode
+        /// </summary>
         [TestMethod]
         public void MultiPlayerCtorTest() {
             foreach (Difficulty d in Enum.GetValues(typeof(Difficulty))) {
@@ -37,6 +46,9 @@ namespace NimUnitTests {
             }
         }
 
+        /// <summary>
+        /// Test to remove all stones from a heap for each difficulty
+        /// </summary>
         [TestMethod]
         public void RemoveAllStonesTest() {
             foreach (Difficulty d in Enum.GetValues(typeof(Difficulty))) {
@@ -48,6 +60,9 @@ namespace NimUnitTests {
             }
         }
 
+        /// <summary>
+        /// Test to make sure that SwitchTurn method switches the player currently in play
+        /// </summary>
         [TestMethod] 
         public void SwitchTurnTest() {
             foreach (Difficulty d in Enum.GetValues(typeof(Difficulty))) {
@@ -60,10 +75,18 @@ namespace NimUnitTests {
             }
         }
 
+        /// <summary>
+        /// Testing when the game is over
+        /// </summary>
         [TestMethod]
         public void GameOverTest() {
-            Nim nim = new Nim(Difficulty.EASY, "p1") { Display = new NimGamePage() };
+            Nim nim = new Nim(Difficulty.EASY, "p1", "p2") { Display = new NimGamePage() };
             Assert.IsFalse(nim.GameOver);
+            nim.RemoveStones(2, 0);
+            nim.SwitchTurn();
+            nim.RemoveStones(2, 1);
+            nim.SwitchTurn();
+            Assert.IsTrue(nim.GameOver);
         }
     }
 }
